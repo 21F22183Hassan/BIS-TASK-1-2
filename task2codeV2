@@ -1,0 +1,41 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class customer_sales_21F22183 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int numCustomers = 0;
+    double totalSales = 0;
+    boolean inputValid = false;
+
+    while (!inputValid) {
+      System.out.print("Enter total sales: ");
+      if (sc.hasNextDouble()) {
+        totalSales = sc.nextDouble();
+        inputValid = true;
+      } else {
+        System.out.println("Invalid input. Please enter a valid number.");
+        sc.nextLine();
+      }
+    }
+
+    inputValid = false;
+
+    while (!inputValid) {
+      System.out.print("Enter number of customers: ");
+      if (sc.hasNextInt()) {
+        numCustomers = sc.nextInt();
+        inputValid = true;
+      } else {
+        System.out.println("Invalid input. Please enter a valid number.");
+        sc.nextLine();
+      }
+    }
+
+    double avgSales = totalSales / numCustomers;
+
+    System.out.println("Number of customers: " + numCustomers);
+    System.out.println("Total sales: " + totalSales);
+    System.out.println("Average sales: " + avgSales);
+  }
+}
